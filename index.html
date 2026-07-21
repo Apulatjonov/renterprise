@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Renterprise — Elektr skuter ijarasi</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#06100f;color:#f7faf7;font-family:Inter,Arial,sans-serif;overflow-x:hidden}
+:root{--lime:#8ee000;--teal:#007f78;--bg:#06100f;--card:#0c1917;--line:#20312e;--muted:#9aa7a3}
+a{text-decoration:none;color:inherit}.wrap{width:min(1240px,calc(100% - 40px));margin:auto}
+nav{position:fixed;z-index:20;inset:0 0 auto;background:#06100fd9;backdrop-filter:blur(18px);border-bottom:1px solid #ffffff12}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:21px}.brand img{width:47px;height:47px;border-radius:50%;object-fit:cover}
+.links{display:flex;align-items:center;gap:28px;color:#bdc7c4;font-size:14px}.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--lime);color:#0a1300;padding:15px 22px;border-radius:11px;font-weight:850;box-shadow:0 0 35px #8ee0001f;transition:.2s}.btn:hover{transform:translateY(-2px);box-shadow:0 0 50px #8ee00035}.btn.disabled{background:#27302e;color:#85908c;pointer-events:none;box-shadow:none}
+.hero{min-height:780px;padding-top:78px;position:relative;display:flex;align-items:center;background:radial-gradient(circle at 78% 45%,#08786e2b,transparent 27%),radial-gradient(circle at 72% 45%,#8ee00012,transparent 43%)}
+.hero:before{content:"RENTERPRISE";position:absolute;left:1%;top:20%;font-size:clamp(90px,15vw,230px);font-weight:950;letter-spacing:-12px;color:#ffffff06;white-space:nowrap}.hero-grid{display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:35px;position:relative}
+.kicker{color:#c0cac7;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;display:flex;gap:10px;align-items:center}.kicker:before{content:"";width:30px;height:2px;background:var(--lime)}
+h1{font-size:clamp(60px,7vw,100px);line-height:.88;letter-spacing:-6px;margin:25px 0;font-weight:950}.lime{color:var(--lime)}.lead{color:var(--muted);font-size:18px;line-height:1.7;max-width:520px}.actions{display:flex;gap:12px;margin-top:34px}.ghost{padding:15px 22px;border:1px solid var(--line);border-radius:11px;font-weight:700}
+.hero-visual{height:610px;display:flex;align-items:center;justify-content:center;position:relative}.hero-visual:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;border:1px solid #8ee00022;box-shadow:inset 0 0 100px #007f7817}.hero-visual img{width:100%;max-height:590px;object-fit:contain;position:relative;z-index:2;filter:drop-shadow(0 30px 35px #0008)}
+.float{position:absolute;z-index:4;padding:15px 18px;background:#0a1715d9;border:1px solid #ffffff18;border-radius:14px;backdrop-filter:blur(12px)}.float b{display:block;font-size:22px}.float small{color:var(--muted)}.f1{right:0;top:24%}.f2{left:3%;bottom:16%}
+.metrics{border-block:1px solid var(--line);background:#081310}.metric-grid{display:grid;grid-template-columns:repeat(4,1fr)}.metric{padding:30px;border-right:1px solid var(--line)}.metric:first-child{border-left:1px solid var(--line)}.metric b{font-size:24px}.metric span{display:block;color:var(--muted);font-size:12px;margin-top:5px}
+section{padding:110px 0}.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:50px;gap:30px}.title{font-size:clamp(45px,5vw,70px);line-height:.95;letter-spacing:-4px;margin:15px 0 0}.desc{color:var(--muted);max-width:440px;line-height:1.7}
+.fleet{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.scooter-card{border:1px solid var(--line);border-radius:25px;overflow:hidden;background:linear-gradient(145deg,#0c1a18,#081210);transition:.25s}.scooter-card:hover{transform:translateY(-5px);border-color:#8ee00045}
+.scooter-photo{height:430px;position:relative;background:radial-gradient(circle,#8ee0000e,transparent 55%),#0a1513}.scooter-photo img{width:100%;height:100%;object-fit:contain;padding:20px}.status{position:absolute;top:20px;left:20px;padding:9px 14px;border-radius:99px;font-size:11px;font-weight:900}.free{background:var(--lime);color:#081100}.taken{background:#0a1412e8;color:#d2d9d6;border:1px solid #ffffff25}
+.scooter-body{padding:30px}.scooter-top{display:flex;justify-content:space-between;gap:15px;align-items:start}.type{color:var(--lime);font-size:11px;font-weight:900;letter-spacing:2px}.name{font-size:42px;font-weight:950;letter-spacing:-3px;margin:5px 0}.quality{padding:8px 11px;border:1px solid #8ee00038;border-radius:9px;color:var(--lime);font-size:11px;font-weight:800}
+.specs{display:grid;grid-template-columns:repeat(3,1fr);margin:25px 0;border-left:1px solid var(--line);border-top:1px solid var(--line)}.spec{padding:15px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.spec b{display:block;font-size:14px}.spec small{color:var(--muted);font-size:10px}
+.price-title{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:10px}.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:22px}.price{padding:16px;border:1px solid var(--line);border-radius:13px}.price.featured{border-color:#8ee00075;background:#8ee0000c}.price small{color:var(--muted);font-size:10px;text-transform:uppercase}.price b{display:block;font-size:17px;margin:5px 0}.price span{color:var(--muted);font-size:10px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}.step{padding:44px;border-right:1px solid var(--line)}.step:last-child{border:0}.num{color:var(--lime);font-weight:900}.step h3{font-size:27px;margin-top:60px}.step p{color:var(--muted);line-height:1.7}
+.cta{padding:70px;border:1px solid var(--line);border-radius:30px;background:radial-gradient(circle at 85% 50%,#8ee00020,transparent 25%),radial-gradient(circle at 80% 50%,#007f7830,transparent 45%),#0b1715;position:relative;overflow:hidden}.cta:after{content:"R";position:absolute;right:5%;top:-25%;font-size:430px;font-weight:950;color:#ffffff05}.cta h2{font-size:clamp(55px,7vw,92px);line-height:.9;letter-spacing:-6px;margin:20px 0 30px;position:relative;z-index:2}.cta a{position:relative;z-index:3}
+footer{padding:60px 0 30px;border-top:1px solid var(--line);color:var(--muted)}.foot{display:flex;justify-content:space-between;gap:30px}.foot .brand{color:white}
+@media(max-width:850px){.links a:not(.btn){display:none}.wrap{width:min(100% - 28px,1240px)}.hero{min-height:auto;padding:140px 0 70px}.hero-grid,.fleet{grid-template-columns:1fr}.hero-visual{height:460px}.metric-grid{grid-template-columns:1fr 1fr}.head{display:block}.desc{margin-top:20px}.scooter-photo{height:350px}.prices{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid var(--line)}.cta{padding:45px 28px}.foot{flex-direction:column}.hero:before{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav"><a class="brand" href="#"><img src="images/logo.png" alt="Renterprise"><span>renterprise</span></a><div class="links"><a href="#scooters">Skuterlar</a><a href="#how">Qanday ishlaydi</a><a href="#scooters">Narxlar</a><a class="btn" href="https://t.me/renterprise_uz" target="_blank">Telegramda yozish ↗</a></div></div></nav>
+
+<header class="hero"><div class="wrap hero-grid"><div><div class="kicker">Toshkentda elektr skuter ijarasi</div><h1>ISHONCHLI.<br><span class="lime">TEJAMKOR.</span><br>SIZ UCHUN.</h1><p class="lead">Ish, yetkazib berish va kundalik harakat uchun qulay elektr skuterlar. O‘zingizga mos skuterni va ijara muddatini tanlang.</p><div class="actions"><a class="btn" href="#scooters">NARXLARNI KO‘RISH ↓</a><a class="ghost" href="https://t.me/renterprise_uz" target="_blank">Telegram ↗</a></div></div><div class="hero-visual"><img src="images/scooters/eve-01.png" alt="EVE electric scooter"><div class="float f1"><b>90–100 KM</b><small>yurish masofasi</small></div><div class="float f2"><b>100% ELECTRIC</b><small>tejamkor harakat</small></div></div></div></header>
+
+<div class="metrics"><div class="wrap metric-grid"><div class="metric"><b>60V 20Ah</b><span>Kuchli batareya</span></div><div class="metric"><b>90–100 km</b><span>Yurish masofasi</span></div><div class="metric"><b>150 kg</b><span>Yuk ko‘tarish</span></div><div class="metric"><b>3 xil</b><span>Kunlik / haftalik / oylik</span></div></div></div>
+
+<section id="scooters"><div class="wrap"><div class="head"><div><div class="kicker">Renterprise floti</div><h2 class="title">O‘ZINGIZGA MOS<br><span class="lime">SKUTERNI TANLANG.</span></h2></div><p class="desc">Har bir skuterning narxi va xususiyatlari alohida ko‘rsatiladi. Yangi skuter qo‘shish uchun pastdagi bitta kartani nusxalash kifoya.</p></div>
+
+<div class="fleet">
+
+<!-- ============================================================
+     SCOOTER CARD START
+     YANGI SKUTER QO'SHISH:
+     1) Shu <article>...</article> blokini to'liq copy/paste qiling.
+     2) Rasmni images/scooters/ papkasiga qo'ying.
+     3) src, nom, status, specs va narxlarni o'zgartiring.
+     STATUS: class="status free" => BO'SH
+             class="status taken" => BAND
+     ============================================================ -->
+<article class="scooter-card">
+  <div class="scooter-photo">
+    <img src="images/scooters/eve-01.png" alt="EVE 01">
+    <div class="status taken">● BAND</div>
+  </div>
+
+  <div class="scooter-body">
+    <div class="scooter-top">
+      <div>
+        <div class="type">ELEKTR SKUTER</div>
+        <div class="name">EVE 01</div>
+      </div>
+      <div class="quality">A'LO HOLAT</div>
+    </div>
+
+    <p class="desc">Yetkazib berish, ish va kundalik qatnov uchun tejamkor elektr skuter.</p>
+
+    <div class="specs">
+      <div class="spec"><b>90–100 km</b><small>MASOFA</small></div>
+      <div class="spec"><b>2 ta - 60V 20Ah</b><small>BATAREYA</small></div>
+      <div class="spec"><b>150 kg</b><small>YUK</small></div>
+    </div>
+
+    <div class="price-title">Ijara narxlari</div>
+    <div class="prices">
+      <div class="price"><small>Kunlik</small><b>40 000 so‘m</b><span>/ kun</span></div>
+      <div class="price"><small>Haftalik</small><b>270 000 so‘m</b><span>/ hafta</span></div>
+      <div class="price featured"><small>Oylik · Eng tejamkor</small><b>1 000 000 so‘m</b><span>/ oy</span></div>
+    </div>
+
+    <a class="btn disabled">HOZIRDA BAND</a>
+    <!--  <a class="btn" href="https://t.me/renterprise_uz" target="_blank">TELEGRAMDA IJARAGA OLISH ↗</a> -->
+  </div>
+</article>
+<!-- SCOOTER CARD END -->
+
+<!--
+================ COPY THIS TEMPLATE FOR A NEW SCOOTER ================
+
+<article class="scooter-card">
+  <div class="scooter-photo">
+    <img src="images/scooters/YOUR-IMAGE.jpg" alt="Scooter name">
+    <div class="status free">● BO‘SH</div>
+  </div>
+
+  <div class="scooter-body">
+    <div class="scooter-top">
+      <div>
+        <div class="type">ELEKTR SKUTER</div>
+        <div class="name">SCOOTER NAME</div>
+      </div>
+      <div class="quality">YAXSHI HOLAT</div>
+    </div>
+
+    <p class="desc">Scooter description.</p>
+
+    <div class="specs">
+      <div class="spec"><b>XX km</b><small>MASOFA</small></div>
+      <div class="spec"><b>XXV XXAh</b><small>BATAREYA</small></div>
+      <div class="spec"><b>XXX kg</b><small>YUK</small></div>
+    </div>
+
+    <div class="price-title">Ijara narxlari</div>
+    <div class="prices">
+      <div class="price"><small>Kunlik</small><b>XX 000 so‘m</b><span>/ kun</span></div>
+      <div class="price"><small>Haftalik</small><b>XXX 000 so‘m</b><span>/ hafta</span></div>
+      <div class="price featured"><small>Oylik · Eng tejamkor</small><b>X XXX 000 so‘m</b><span>/ oy</span></div>
+    </div>
+
+    <a class="btn" href="https://t.me/renterprise_uz" target="_blank">TELEGRAMDA IJARAGA OLISH ↗</a>
+  </div>
+</article>
+
+=====================================================================
+-->
+
+</div></div></section>
+
+<section id="how" style="background:#081210"><div class="wrap"><div class="head"><div><div class="kicker">Juda oddiy</div><h2 class="title">3 QADAM.<br><span class="lime">VA YO‘LDASIZ.</span></h2></div></div><div class="steps"><div class="step"><div class="num">01</div><h3>Skuterni tanlang</h3><p>Xususiyatlari, holati va ijara narxlarini solishtiring.</p></div><div class="step"><div class="num">02</div><h3>Telegramda yozing</h3><p>Ro‘yxatdan o‘tish va telefon tasdiqlash yo‘q. Biz bilan to‘g‘ridan-to‘g‘ri bog‘laning.</p></div><div class="step"><div class="num">03</div><h3>Yo‘lga chiqing</h3><p>Ijara shartlarini kelishing, skuterni oling va harakatni boshlang.</p></div></div></div></section>
+
+<section><div class="wrap"><div class="cta"><div class="kicker">Renterprise bilan boshlang</div><h2>TANLANG.<br>BIZGA YOZING.<br><span class="lime">YO‘LGA CHIQING.</span></h2><a class="btn" href="https://t.me/renterprise_uz" target="_blank">TELEGRAM ORQALI BOG‘LANISH ↗</a></div></div></section>
+
+<footer><div class="wrap foot"><div><div class="brand"><img src="images/logo.png" alt="Renterprise"><span>renterprise</span></div><p>Elektr transport ijarasi · Toshkent</p></div><div>@renterprise_uz</div></div></footer>
+</body>
+</html>
