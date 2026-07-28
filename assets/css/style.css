@@ -1771,9 +1771,9 @@ RESPONSIVE
 
     position:absolute;
 
-    left:var(--x);
+    /*left:var(--x);*/
 
-    top:var(--y);
+    /*top:var(--y);*/
 
     width:250px;
 
